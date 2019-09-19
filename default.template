@@ -3,4 +3,8 @@ server {
     location / {
         proxy_pass ${PROXY_PASS};
     }
+    location /nginx-health {
+        access_log off;
+        return 200 "healthy\n";
+    }
 }
